@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+
+    <h2>Vous êtes connectés en tant que: <%= email %></h2>
+
+    <form action="/login" method="post">
+      <input type="text" name="email">
+      <input type="submit">
+    </form>
+
+  </body>
+
+</html>
