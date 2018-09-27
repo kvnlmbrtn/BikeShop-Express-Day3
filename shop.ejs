@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>BikeShop - Shop</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/images/bicycle.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/stylesheets/styleShop.css" />
+</head>
+
+
+
+<body>
+
+  <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+  <!-- Création d'une bannière pour l'inscription -->
+
+  <div id="bannerLogIn">
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSignUp">
+      Sign up
+    </button>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLogIn">
+        Log in
+    </button>
+
+  </div>
+
+  <!-- Création d'un modal pour valider les informations -->
+
+  <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSignUpTitle">Sign up form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Inclusion d'un formulaire de validation -->
+
+          <form action="/shop/inscription" method="POST">
+
+              <div class="form-group row">
+                <label for="inputEmail1" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword1" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputPassword2" class="col-sm-2 col-form-label">Confirm</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword2" placeholder="Confirm Password">
+                </div>
+              </div>
+
+              <div class="formButtons">
+                <button type="button" class="btn btn-secondary closeButtons" data-dismiss="modal">Close</button>
+                <input type="submit" class="sendButtons" id="modalSignUpSend" value="Send">
+              </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="modalLogIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLogInTitle">Log in form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Inclusion d'un formulaire de validation -->
+
+          <form action="/shop/inscription" method="POST">
+
+            <div class="form-group row">
+              <label for="inputEmail2" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail2" placeholder="Email">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              </div>
+            </div>
+
+            <div class="formButtons">
+              <button type="button" class="btn btn-secondary closeButtons" data-dismiss="modal">Close</button>
+              <input type="submit" class="sendButtons" id="modalLogInSend" value="Send">
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+  <!-- Page visuelle d'accueil des utilisateurs -->
+
+  <header id="welcomeView">
+    <h1 id="companyName">BIKE SHOP</h1>
+    <p id="companyDescription">Plateforme de vente de vélos</p>
+    <p id="learnMoreText">En savoir plus</p>
+    <a href="#eShop" id="learnMoreLink"><i class="fas fa-arrow-circle-down"></i></a>
+  </header>
+
+
+
+  <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+  <!-- Architecture du shop pour acheter des vélos -->
+
+
+  <div id="eShop" class="container-fluid">
+
+    <header id="headerShop">
+      <h3>SHOP</h3>
+    </header>
+
+    <div class="row" id="shop">
+
+      <% for (i=0; i < catalogue.length; i++ ) {
+            %>
+
+      <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+        <img class="card-img-top" src="<%= catalogue[i].image %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Model <span class="models">
+                  <%= catalogue[i].model %>
+                </span>
+          </h5>
+          <p class="card-text"><span class="prices">
+                  <%= catalogue[i].price %>
+                </span> €
+          </p>
+
+          <form action="/basket" method="get">
+            <input type="hidden" name="image" value="<%= catalogue[i].image %>">
+            <input type="hidden" name="model" value="<%= catalogue[i].model %>">
+            <input type="hidden" name="price" value="<%= catalogue[i].price %>">
+            <input type="hidden" name="quantity" value="<%= catalogue[i].quantity %>">
+            <input type="hidden" name="inBasket" value="<%= catalogue[i].inBasket %>">
+            <input type="hidden" name="position" value="<%= i %>">
+            <button class="buyButtons">Buy</button>
+          </form>
+
+        </div>
+      </div>
+
+      <% } %>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+  <!-- Bloc sur les réseaux sociaux et les mentions légales -->
+
+
+  <div id="bloc3">
+    <p>Suivez-nous où que vous soyez ! </p>
+
+    <ul class="iconesRéseauxSociaux">
+      <li><a href="https://twitter.com/entoureo" target="_blank" class="fab fa-twitter"></a></li>
+      <li><a href="https://www.facebook.com/Entoureo-558920777856188/" target="_blank" class="fab fa-facebook-f"></a></li>
+      <li><a href="#" target="_blank" class="fab fa-linkedin-in"></a></li>
+    </ul>
+
+  </div>
+
+  <script src="/javascripts/mainBikeShop.js"></script>
+
+</body>
+
+</html>
